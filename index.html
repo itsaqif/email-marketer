@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aqif Akhtar Retention</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Figtree:wght@400;500;600&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a white photo studio. Aqif stands in a fixed, scroll-scrubbed video at the centre; content hangs in frosted panels on either side of him (stacked on phones, with open "windows" between). Single light studio by design. */
+:root{
+  color-scheme:light;
+  --studio:#F8FBFC; --card-solid:#FFFFFF; --code-bg:#0F1630; --glass:rgba(255,255,255,.66); --glass-strong:rgba(255,255,255,.84);
+  --ink:#0F1630; --muted:#515A78; --line:rgba(15,22,48,.12); --soft:#EEF1F7;
+  --accent:#2B44FF; --accent-soft:#E3E7FF; --glow:#63C8FF; --violet:#9B6BFF; --ok:#12925F; --warm:#E8622F;
+  --shadow:0 1px 2px rgba(15,22,48,.05),0 20px 50px -24px rgba(15,22,48,.35);
+  --f-display:"Archivo","Arial Narrow",Helvetica,sans-serif;
+  --f-body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --gutter:clamp(16px,3.4vw,48px);
+  --gap-center:clamp(300px,30vw,520px);
+}
+@property --a{syntax:"<angle>";inherits:false;initial-value:0deg}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--studio)}
+body{background:var(--studio);color:var(--ink);font:400 16px/1.6 var(--f-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:var(--f-display);font-stretch:118%;line-height:.95;letter-spacing:-.02em;text-wrap:balance;margin:0}
+em.s{font-family:var(--f-serif);font-style:italic;font-weight:400;font-stretch:100%;letter-spacing:0;color:var(--accent)}
+p{margin:0}
+a{color:inherit}
+.eyebrow{font:500 12px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:var(--f-mono)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+/* ---------- the studio (fixed video) ---------- */
+.studio{position:fixed;inset:0;z-index:0;overflow:hidden;background:var(--studio) center 30%/cover no-repeat}
+.studio video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;
+  -webkit-mask-image:radial-gradient(120% 95% at 50% 45%,#000 55%,transparent 100%);mask-image:radial-gradient(120% 95% at 50% 45%,#000 55%,transparent 100%)}
+.flash{position:fixed;inset:0;z-index:1;background:var(--studio);opacity:0;pointer-events:none}
+
+/* ---------- live border ---------- */
+.live{border:1.5px solid transparent!important;
+  background:linear-gradient(var(--glass),var(--glass)) padding-box,
+  conic-gradient(from var(--a),var(--line) 0 55%,var(--accent) 70%,var(--glow) 80%,var(--violet) 88%,var(--line) 100%) border-box!important;
+  animation:spin 6s linear infinite}
+.live.fast{animation-duration:3.2s}
+.live.solid-bg{background:linear-gradient(var(--glass-strong),var(--glass-strong)) padding-box,conic-gradient(from var(--a),var(--line) 0 55%,var(--accent) 70%,var(--glow) 80%,var(--violet) 88%,var(--line) 100%) border-box!important}
+@keyframes spin{to{--a:360deg}}
+.glass{background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);box-shadow:var(--shadow);border-radius:22px}
+
+/* ---------- page ---------- */
+.page{position:relative;z-index:3}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;padding-inline:var(--gutter);padding-block:12px}
+.nav .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 12px 10px 18px;border-radius:999px}
+.logo{font:800 15px/1 var(--f-display);font-stretch:125%;text-decoration:none;display:flex;align-items:center;gap:10px;white-space:nowrap}
+.logo i{width:9px;height:9px;border-radius:50%;background:var(--ok);animation:ping 2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(18,146,95,.5)}70%,100%{box-shadow:0 0 0 8px rgba(18,146,95,0)}}
+.nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;font-size:14px;color:var(--muted)}
+.nav ul a{text-decoration:none}.nav ul a:hover{color:var(--ink)}
+@media (max-width:980px){.nav ul{display:none}}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:11px 18px;font:600 14px/1 var(--f-body);text-decoration:none;cursor:pointer;color:var(--ink);border:1px solid var(--line);background:var(--glass-strong);white-space:nowrap}
+.btn.solid{background:var(--ink);color:var(--studio);border-color:var(--ink)}
+.btn.solid:hover{color:#fff}
+.btn.solid:hover{background:var(--accent);border-color:var(--accent)}
+
+.nav-r{display:flex;gap:8px;align-items:center}
+/* the split: left column | Aqif | right column */
+.split{display:grid;grid-template-columns:minmax(0,1fr) var(--gap-center) minmax(0,1fr);gap:0 clamp(16px,2vw,32px);padding-inline:var(--gutter);align-items:start}
+.split > .L{grid-column:1}.split > .R{grid-column:3}
+.split > .full{grid-column:1/-1}
+.col{display:flex;flex-direction:column;gap:18px;min-width:0}
+@media (max-width:1100px){
+  :root{--gap-center:0px}
+  .split{grid-template-columns:minmax(0,1fr);max-width:640px;margin-inline:auto}
+  .split > .L,.split > .R{grid-column:1}
+  .col + .col{margin-top:18px}
+}
+.chapter{padding-block:clamp(60px,10vh,120px)}
+.window{height:62vh;height:62svh;display:grid;place-items:end center;padding-bottom:4vh}
+@media (max-width:1100px){.window{height:72svh}}
+
+.card{padding:clamp(18px,2.2vw,28px)}
+.title h2{font-size:clamp(32px,3.6vw,56px);font-weight:830;text-transform:uppercase}
+.title p{color:var(--muted);margin-top:14px;font-size:16px;max-width:46ch}
+.title .eyebrow{margin-bottom:14px;display:block}
+
+/* hero */
+.hero{min-height:calc(100svh - 70px);display:grid;align-content:center;padding-block:30px 90px}
+.hero h1{font-size:clamp(40px,4.9vw,86px);font-weight:870;text-transform:uppercase}
+.hero h1 .row{display:block;overflow:hidden;padding-bottom:.04em}
+.hero h1 .row span{display:inline-block;animation:rise 1s cubic-bezier(.2,.8,.2,1) both}
+.hero h1 .row:nth-child(2) span{animation-delay:.1s}.hero h1 .row:nth-child(3) span{animation-delay:.2s}
+@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+.hero h1 em.s{text-transform:none;font-size:1.1em}
+.lede{font-size:clamp(16px,1.25vw,18px);color:var(--muted);max-width:44ch}
+.lede b{color:var(--ink);font-weight:600}
+.namecard{display:flex;flex-direction:column;gap:14px}
+.namecard .who{font:800 clamp(22px,2vw,30px)/1 var(--f-display);font-stretch:120%;text-transform:uppercase}
+.namecard .role{font:500 12.5px/1.4 var(--f-mono);color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:8px 11px;border-radius:10px;background:var(--glass-strong);border:1px solid var(--line);font:500 12px/1 var(--f-mono);color:var(--muted)}
+.chip b{color:var(--ink);font-weight:500}
+.ctas{display:flex;flex-wrap:wrap;gap:10px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat.live{padding:14px 16px;border-radius:16px;animation:bob 6s ease-in-out infinite,spin 6s linear infinite}
+.stat.live:nth-child(2){animation-delay:-3s,-1s}
+.stat b{display:block;font:800 clamp(24px,2.2vw,32px)/1 var(--f-display);font-stretch:112%;font-variant-numeric:tabular-nums}
+.stat small{font:500 11px/1.3 var(--f-mono);color:var(--muted)}
+@keyframes bob{50%{transform:translateY(-8px)}}
+@media (max-width:1100px){.hero{min-height:auto;padding-block:24px 0}.hero .col.R{margin-top:18px}
+  .hero .col.L{background:var(--glass-strong);border:1px solid var(--line);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);border-radius:22px;padding:22px;box-shadow:var(--shadow);gap:16px}}
+@media (min-width:1101px){.split{padding-right:calc(var(--gutter) + 96px)}}
+.dev-list{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:10px}
+.dev-list li{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start;font-size:15px}
+.dev-list li span{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);font:600 12px/1 var(--f-mono)}
+.dev-list li b{display:block;font-weight:600}
+.dev-list li small{color:var(--muted);font-size:13.5px;line-height:1.45;display:block}
+.code{font:400 12.5px/1.7 var(--f-mono);background:var(--code-bg);color:#DCE2FF;border-radius:14px;border:1px solid var(--line);padding:16px 18px;overflow-x:auto;white-space:pre;margin-top:12px}
+.code .c{color:#7E89B8}.code .k{color:#9FB0FF}.code .s{color:#8FE0B8}
+
+/* process steps */
+.step{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;align-items:baseline}
+.step .n{grid-row:span 2;font:800 clamp(36px,3.4vw,52px)/1 var(--f-display);font-stretch:125%;color:transparent;-webkit-text-stroke:1.5px var(--accent)}
+.step h3{font-size:clamp(20px,1.8vw,26px);font-weight:800;text-transform:uppercase}
+.step p{color:var(--muted);font-size:15px}
+
+/* flows */
+.tabs{display:flex;flex-direction:column;gap:8px}
+@media (max-width:1100px){.tabs{flex-direction:row;overflow-x:auto;padding-bottom:4px}}
+.tab{text-align:left;cursor:pointer;border:1px solid var(--line);background:var(--glass-strong);color:var(--ink);border-radius:14px;padding:13px 15px;font:600 15px/1.2 var(--f-body);display:flex;justify-content:space-between;gap:12px;align-items:center;flex:0 0 auto;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.tab small{font:500 11px/1 var(--f-mono);color:var(--muted)}
+.tab[aria-selected="true"]{border:1.5px solid transparent;background:linear-gradient(var(--card-solid),var(--card-solid)) padding-box,conic-gradient(from var(--a),var(--accent),var(--glow),var(--violet),var(--accent)) border-box;animation:spin 3s linear infinite}
+.canvas{min-width:0}
+.canvas h3{font-size:clamp(22px,2vw,28px);font-weight:800;text-transform:uppercase}
+.canvas .desc{color:var(--muted);font-size:14.5px;margin-top:8px}
+.kpi{display:flex;gap:10px;flex-wrap:wrap;margin-block:16px 18px}
+.kpi div{background:var(--glass-strong);border:1px solid var(--line);border-radius:12px;padding:9px 12px;font:500 11px/1.2 var(--f-mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.kpi div b{display:block;font:800 19px/1.1 var(--f-display);font-stretch:110%;color:var(--ink);margin-bottom:3px}
+.flow{position:relative;display:grid;gap:10px;padding-left:30px}
+.flow::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.flow::after{content:"";position:absolute;left:5px;top:0;width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft),0 0 16px var(--accent);animation:travel 4.5s cubic-bezier(.5,0,.5,1) infinite}
+@keyframes travel{0%{top:0;opacity:0}8%,92%{opacity:1}100%{top:calc(100% - 10px);opacity:0}}
+.node{position:relative;display:flex;gap:12px;align-items:flex-start;background:var(--glass-strong);border:1px solid var(--line);border-radius:13px;padding:10px 12px;animation:pop .5s both}
+.node::before{content:"";position:absolute;left:-25px;top:14px;width:9px;height:9px;border-radius:50%;background:var(--card-solid);border:2px solid var(--muted)}
+.node .ico{flex:0 0 30px;height:30px;border-radius:9px;display:grid;place-items:center;font:600 11.5px/1 var(--f-mono);background:var(--accent-soft);color:var(--accent)}
+.node.wait{background:transparent;border-style:dashed;padding:7px 12px}
+.node.wait .ico{background:transparent;color:var(--muted);border:1px dashed var(--line)}
+.node.split .ico{background:color-mix(in srgb,var(--warm) 18%,transparent);color:var(--warm)}
+.node.trig .ico{background:var(--ink);color:var(--studio)}
+.node h4{margin:0;font:600 14.5px/1.3 var(--f-body)}
+.node p{font-size:13px;color:var(--muted);margin-top:2px}
+.node .subj{font-family:var(--f-mono);font-size:12px;background:var(--soft);border-radius:6px;padding:3px 7px;display:inline-block;margin-top:5px}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}}
+
+/* experience */
+.job .when{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font:500 12.5px/1.4 var(--f-mono);color:var(--muted);font-variant-numeric:tabular-nums;margin-bottom:12px}
+.job .when b{color:var(--ink);font-weight:500}
+.now{display:inline-flex;align-items:center;gap:6px;padding:4px 8px;border-radius:999px;background:rgba(18,146,95,.12);color:var(--ok);font-size:11px}
+.now i{width:6px;height:6px;border-radius:50%;background:currentColor;animation:blink 1.4s steps(2) infinite}
+@keyframes blink{50%{opacity:.2}}
+.job h3{font-size:clamp(20px,1.9vw,28px);font-weight:820;text-transform:uppercase}
+.job .co{color:var(--muted);margin-top:6px;font-size:14.5px}
+.job ul{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.job li{position:relative;padding-left:18px;font-size:15px}
+.job li::before{content:"";position:absolute;left:0;top:.65em;width:8px;height:2px;background:var(--accent)}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.stack span{font:500 11px/1 var(--f-mono);padding:6px 8px;border-radius:7px;border:1px solid var(--line);color:var(--muted);background:var(--glass)}
+
+/* stores */
+.store{display:flex;flex-direction:column;overflow:hidden;text-decoration:none;color:var(--ink);transition:transform .3s;padding:0!important}
+a.store:hover{transform:translateY(-4px)}
+.chrome{display:flex;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--glass);font:500 12px/1 var(--f-mono);color:var(--muted)}
+.chrome i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.chrome span{margin-left:8px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chrome em{font-style:normal;color:var(--accent)}
+.store-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px}
+.store-body h3{font-size:clamp(24px,2.4vw,34px);font-weight:830;text-transform:uppercase}
+.store-body > p:not(.eyebrow){color:var(--muted);font-size:14.5px}
+
+/* email phone */
+.phone{width:100%;max-width:340px;border-radius:42px;padding:9px;margin-inline:auto}
+.screen{border-radius:33px;overflow:hidden;height:560px;background:#fff;color:#1b1b1b;position:relative}
+.screen .bar{position:absolute;top:0;left:0;right:0;z-index:2;background:#fff;padding:14px 18px 10px;border-bottom:1px solid #eee;font:12px/1.35 var(--f-body)}
+.screen .bar b{display:block;font-size:14px}.screen .bar span{color:#666}
+.mail{padding-top:92px;animation:read 22s ease-in-out infinite alternate}
+.screen:hover .mail{animation-play-state:paused}
+@keyframes read{0%,12%{transform:translateY(0)}88%,100%{transform:translateY(-640px)}}
+.m-brand{text-align:center;font:800 18px/1 var(--f-display);font-stretch:125%;letter-spacing:.2em;padding:14px 0;color:#2a2722}
+.m-hero{margin:0 14px;border-radius:14px;height:210px;background:radial-gradient(circle at 70% 35%,#fff6e8 0 18%,transparent 19%),radial-gradient(120% 90% at 30% 100%,#d8b38a,#efe0cc 60%,#f7efe4);position:relative;overflow:hidden}
+.m-hero .jar{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);width:88px;height:98px;border-radius:14px 14px 18px 18px;background:linear-gradient(90deg,#efe8dc,#fffaf2 40%,#e3d9c9);box-shadow:0 16px 24px -10px rgba(80,50,20,.45)}
+.m-hero .jar::before{content:"";position:absolute;top:-24px;left:6px;right:6px;height:28px;border-radius:8px 8px 4px 4px;background:linear-gradient(90deg,#3a3129,#6b5a4a 45%,#2e2620)}
+.m-hero .jar::after{content:"RENEW";position:absolute;top:40px;left:0;right:0;text-align:center;font:700 10px/1 var(--f-mono);letter-spacing:.3em;color:#7a6650}
+.m-hero small{position:absolute;right:10px;bottom:8px;font:10px/1 var(--f-mono);color:#7a6650}
+.m-body{padding:20px 22px 8px;font:15px/1.55 Georgia,serif}
+.m-body h5{font:800 23px/1.05 var(--f-display);font-stretch:110%;margin:0 0 10px;color:#2a2722}
+.m-body p{margin-bottom:12px;color:#3d3830}
+.m-btn{display:block;margin:6px 22px 18px;padding:13px;text-align:center;border-radius:999px;background:#2a2722;color:#fff;font:600 14px/1 var(--f-body)}
+.m-rev{margin:0 22px;padding:14px;border-radius:12px;background:#f6f1ea;font:italic 14px/1.5 Georgia,serif;color:#4a4238}
+.m-rev b{display:block;font:600 12px/1 var(--f-body);font-style:normal;margin-top:8px;color:#7a6650}
+.m-foot{padding:22px;text-align:center;font:11px/1.5 var(--f-body);color:#999}
+
+/* A/B lab */
+.lab table{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}
+.lab .tw{overflow-x:auto}
+.lab th{text-align:left;font:500 10.5px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:0 8px 10px 0;border-bottom:1px solid var(--line)}
+.lab td{padding:10px 8px 10px 0;border-bottom:1px solid var(--line)}
+.lab tr:last-child td{border-bottom:0}
+.lab td.s{font-family:var(--f-mono);font-size:12px;min-width:190px}
+.barw{width:70px;height:6px;border-radius:3px;background:var(--soft);overflow:hidden;display:inline-block;vertical-align:middle;margin-right:8px}
+.barw b{display:block;height:100%;background:var(--muted);width:0;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+tr.win .barw b{background:var(--accent)}
+.win-pill{font:500 10px/1 var(--f-mono);padding:3px 6px;border-radius:5px;background:var(--accent);color:#fff;margin-left:6px}
+.lab h4{margin:0 0 4px;font:700 16px/1.2 var(--f-body)}
+.note h4{margin:0 0 6px;font:700 12px/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.note p{color:var(--muted);font-size:15px}
+
+/* AI */
+.prompt{font:400 13.5px/1.7 var(--f-mono);min-height:200px}
+.prompt .lbl{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.caret{display:inline-block;width:8px;height:1.1em;vertical-align:-3px;background:var(--accent);animation:blink 1s steps(2) infinite}
+.ai-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.ai-steps div{padding:14px;font-size:13.5px;color:var(--muted)}
+.ai-steps b{display:block;color:var(--ink);font:700 11.5px/1.2 var(--f-mono);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+@media (max-width:480px){.ai-steps{grid-template-columns:1fr}}
+
+/* fit */
+.req{display:flex;flex-direction:column;gap:8px}
+.req .q{font:500 11.5px/1.4 var(--f-mono);color:var(--muted)}
+.req .a{font-size:15px}
+.ck{display:inline-flex;align-items:center;gap:7px;font:600 12px/1 var(--f-mono);color:var(--ok)}
+.ck svg{width:16px;height:16px}
+.clock .t{font:800 clamp(34px,3.4vw,46px)/1 var(--f-display);font-stretch:112%;font-variant-numeric:tabular-nums;margin-block:10px}
+.clock .row{display:flex;justify-content:space-between;gap:10px;font:500 12px/1.4 var(--f-mono);color:var(--muted)}
+.state{display:inline-flex;align-items:center;gap:7px;font:600 12px/1 var(--f-mono);margin-top:12px}
+.state i{width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.state.off i{background:var(--muted)}
+
+/* contact */
+.cta{max-width:880px;margin-inline:auto;text-align:center;padding:clamp(26px,5vw,56px)}
+.cta h2{font-size:clamp(34px,5.6vw,80px);font-weight:870;text-transform:uppercase}
+.cta p{margin:16px auto 0;color:var(--muted);max-width:50ch;font-size:16.5px}
+.mailrow{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center}
+.addr{font:500 clamp(14px,1.8vw,19px)/1 var(--f-mono);padding:14px 18px;border-radius:14px;background:var(--card-solid);border:1px solid var(--line);user-select:all;word-break:break-all}
+.toast{font:500 12px/1 var(--f-mono);color:var(--ok);min-height:1em;flex-basis:100%}
+footer{position:relative;z-index:3;padding:30px var(--gutter) 50px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* reveal (JS adds .pre only to off-screen panels) */
+.rv{transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.pre{opacity:0;transform:translate3d(var(--dx,0),40px,0)}
+.L .rv.pre,.L.rv.pre{--dx:-50px}.R .rv.pre,.R.rv.pre{--dx:50px}
+@media (max-width:1100px){.rv.pre{--dx:0!important}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
+  .mail{animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- fixed studio: Aqif, scrubbed by scroll -->
+<div class="studio" aria-hidden="true"><video id="bgv" muted playsinline preload="auto"></video></div>
+<div class="flash" id="flash" aria-hidden="true"></div>
+<div class="page">
+<nav class="nav" aria-label="Main">
+  <div class="in glass">
+    <a class="logo" href="#top"><i aria-hidden="true"></i>AQIF AKHTAR</a>
+    <ul>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#flows">Flows</a></li>
+      <li><a href="#stores">Stores</a></li>
+      <li><a href="#copy">Copy</a></li>
+      <li><a href="#dev">Dev</a></li>
+      <li><a href="#fit">Fit</a></li>
+    </ul>
+    <div class="nav-r"><a class="btn solid" href="#contact">Hire me →</a></div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero split" id="top">
+  <div class="col L">
+    <p class="eyebrow">Klaviyo · Omnisend · Shopify D2C</p>
+    <h1>
+      <span class="row"><span>First order</span></span>
+      <span class="row"><span>is just the</span></span>
+      <span class="row"><span><em class="s">beginning.</em></span></span>
+    </h1>
+    <p class="lede">I turn one-time Shopify buyers into repeat customers with email and SMS. <b>I write all the copy</b> and <b>make the visuals with AI</b>, so you don't need a copywriter or a designer.</p>
+  </div>
+  <div class="col R">
+    <div class="namecard glass live card">
+      <span class="who">Aqif Akhtar</span>
+      <span class="role">Email &amp; Retention Marketer · Shopify D2C</span>
+      <div class="chips">
+        <span class="chip"><b>3.5 yrs</b> D2C</span>
+        <span class="chip"><b>Klaviyo</b> + Omnisend</span>
+        <span class="chip"><b>09–18</b> CET</span>
+      </div>
+      <div class="ctas"><a class="btn solid" href="#contact">Start a conversation</a><a class="btn" href="#flows">See my flows</a></div>
+    </div>
+    <div class="stats">
+      <div class="stat glass live"><b>41%</b><small>revenue from flows</small></div>
+      <div class="stat glass live"><b>+9.2 pts</b><small>repeat-purchase rate</small></div>
+    </div>
+  </div>
+</header>
+
+<div class="window" aria-hidden="true"></div>
+
+<!-- PROCESS -->
+<section id="process" class="chapter split" aria-label="How I work">
+  <div class="col L">
+    <div class="glass card title rv"><span class="eyebrow">How I work</span><h2>One person, <em class="s">whole channel</em></h2><p>Strategy, copy, visuals, build, testing and reporting. Six steps, every week.</p></div>
+    <div class="glass card step rv"><span class="n">01</span><h3>Plan</h3><p>Monthly send calendar around launches, stock and margin. Segments picked first.</p></div>
+    <div class="glass card step rv"><span class="n">02</span><h3>Write</h3><p>Subject lines, preview text, body and SMS, in the brand's voice.</p></div>
+  </div>
+  <div class="col R">
+    <div class="glass card step rv"><span class="n">03</span><h3>Make visuals</h3><p>Hero images, product scenes and GIFs made with AI tools, sized for the inbox.</p></div>
+    <div class="glass card step rv"><span class="n">04</span><h3>Build</h3><p>Flows in Klaviyo: triggers, filters, splits, dynamic product blocks, QA on every device.</p></div>
+    <div class="glass card step rv"><span class="n">05</span><h3>Test</h3><p>A/B on subject, send time and offer. Winners judged on placed-order rate.</p></div>
+    <div class="glass card step rv"><span class="n">06</span><h3>Report</h3><p>Weekly note on attributed revenue, repeat rate and list health, plus what to try next.</p></div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="chapter split" aria-label="Experience">
+  <div class="col L">
+    <div class="glass card title rv"><span class="eyebrow">Experience</span><h2>Hands-on <em class="s">D2C retention</em></h2><p>Full-time roles on Shopify stores selling to consumers. No B2B lead gen or cold email.</p></div>
+    <article class="glass live card job rv">
+      <div class="when"><b>Feb 2025 – Present</b><span class="now"><i></i>Current</span></div>
+      <h3>Email &amp; Retention Lead</h3>
+      <p class="co">Skincare brand · Shopify Plus · ~85k subscribers</p>
+      <ul>
+        <li>Run the whole channel alone: calendar, copy, AI visuals, builds, reporting.</li>
+        <li>Rebuilt 9 core flows; flows grew from 22% to 41% of email revenue.</li>
+        <li>RFM segments and a VIP tier lifted repeat rate 9.2 points.</li>
+      </ul>
+      <div class="stack"><span>Klaviyo</span><span>Shopify Plus</span><span>Klaviyo SMS</span><span>Gemini</span><span>Canva</span></div>
+    </article>
+  </div>
+  <div class="col R">
+    <article class="glass card job rv">
+      <div class="when"><b>Jun 2023 – Jan 2025</b></div>
+      <h3>Klaviyo Email Marketer</h3>
+      <p class="co">Apparel brand · Shopify · ~40k subscribers</p>
+      <ul>
+        <li>Migrated from Omnisend to Klaviyo with no gap in flows or consent data.</li>
+        <li>Browse-abandon and back-in-stock flows; recovered revenue up 34%.</li>
+        <li>Sunset flow brought seed-test inbox placement back above 98%.</li>
+      </ul>
+      <div class="stack"><span>Omnisend</span><span>Klaviyo</span><span>Shopify</span></div>
+    </article>
+    <article class="glass card job rv">
+      <div class="when"><b>Mar 2022 – May 2023</b></div>
+      <h3>Shopify &amp; Email Executive</h3>
+      <p class="co">Freelance Shopify builds · Omnisend</p>
+      <ul>
+        <li>Built Shopify stores end to end, then set up welcome, cart and post-purchase emails.</li>
+        <li>Wrote weekly newsletters and seasonal promotions.</li>
+      </ul>
+      <div class="stack"><span>Shopify</span><span>Omnisend</span><span>SEO</span><span>Canva</span></div>
+    </article>
+  </div>
+</section>
+
+<div class="window" aria-hidden="true"></div>
+
+<!-- FLOWS -->
+<section id="flows" class="chapter split" aria-label="Flows">
+  <div class="col L">
+    <div class="glass card title rv"><span class="eyebrow">Core automations</span><h2>Flows that sell <em class="s">while you sleep</em></h2><p>The flows I set up first on every Shopify store. Pick one to see the build.</p></div>
+    <div class="tabs rv" role="tablist" aria-label="Flows" id="tabs"></div>
+  </div>
+  <div class="col R">
+    <div class="glass live card canvas rv" id="canvas" role="tabpanel"></div>
+  </div>
+</section>
+
+<!-- STORES -->
+<section id="stores" class="chapter split" aria-label="Shopify portfolio">
+  <div class="col L">
+    <div class="glass card title rv"><span class="eyebrow">Shopify portfolio</span><h2>Stores I built <em class="s">and email</em></h2><p>Built end to end, with the email setup that turns first buyers into repeat customers.</p></div>
+    <a class="glass live store rv" href="https://fairgets.com/" target="_blank" rel="noopener">
+      <div class="chrome"><i></i><i></i><i></i><span>fairgets.com</span><em>Live ↗</em></div>
+      <div class="store-body">
+        <p class="eyebrow">Dropshipping · USA</p><h3>Fairgets</h3>
+        <p>US dropshipping store with AliExpress and CJ Dropshipping. I built the store and checkout, then the welcome, abandoned-cart and order follow-up emails.</p>
+        <div class="stack"><span>Shopify</span><span>CJ Dropshipping</span><span>Abandoned cart</span></div>
+      </div>
+    </a>
+    <div class="glass store rv">
+      <div class="chrome"><i></i><i></i><i></i><span>envolu · demo store</span><em>Demo</em></div>
+      <div class="store-body">
+        <p class="eyebrow">Dropshipping</p><h3>Envolu</h3>
+        <p>Practice store with Oberlo and AliExpress, used to test cart-recovery and post-purchase flows.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col R">
+    <a class="glass live store rv" href="https://www.chic-fits.com/" target="_blank" rel="noopener">
+      <div class="chrome"><i></i><i></i><i></i><span>chic-fits.com</span><em>Live ↗</em></div>
+      <div class="store-body">
+        <p class="eyebrow">Fashion · Kids &amp; men</p><h3>Chic-Fits</h3>
+        <p>Mobile-first clothing store. I built the store and collections, plus signup capture, a welcome series and seasonal sale campaigns.</p>
+        <div class="stack"><span>Shopify</span><span>SEO</span><span>Welcome series</span></div>
+      </div>
+    </a>
+    <div class="glass store rv">
+      <div class="chrome"><i></i><i></i><i></i><span>glimply · demo store</span><em>Demo</em></div>
+      <div class="store-body">
+        <p class="eyebrow">Multi-category</p><h3>Glimply</h3>
+        <p>Demo store used as a sandbox for segments, campaign templates and AI-made product visuals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COPY -->
+<section id="copy" class="chapter split" aria-label="Copy and testing">
+  <div class="col L">
+    <div class="glass card title rv"><span class="eyebrow">Copy &amp; testing</span><h2>I write <em class="s">every word</em></h2><p>A post-purchase email I wrote. Hover to pause it.</p></div>
+    <div class="phone live solid-bg rv">
+      <div class="screen">
+        <div class="bar"><b>Your skin, two weeks in</b><span>From RENEW · A quick check, plus the step most people skip.</span></div>
+        <div class="mail">
+          <div class="m-brand">RENEW</div>
+          <div class="m-hero"><div class="jar"></div><small>AI visual</small></div>
+          <div class="m-body"><h5>Two weeks in. How's it going?</h5><p>Hi Sara, by now the Barrier Cream should be part of your evening routine. Most people notice softer skin around day ten.</p><p>One tip: apply it to damp skin. It locks in more water and you'll use less.</p></div>
+          <span class="m-btn">See the 3-step routine</span>
+          <div class="m-rev">"I stopped needing a second moisturiser by week three."<b>Verified buyer · 5 stars</b></div>
+          <div class="m-body"><p>Running low? Your refill is 15% off until Sunday, and it ships free.</p></div>
+          <span class="m-btn">Get my refill</span>
+          <div class="m-foot">You're receiving this because you ordered from RENEW.<br>Unsubscribe · Manage preferences</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col R">
+    <div class="glass live card lab rv" id="lab">
+      <h4>Subject-line test · Winback</h4><p class="eyebrow" style="margin-bottom:12px">Placed-order rate</p>
+      <div class="tw"><table>
+        <thead><tr><th>Subject</th><th>Opens</th><th>Orders</th></tr></thead>
+        <tbody>
+          <tr><td class="s">We miss you, here's 15% off</td><td>38.1%</td><td><span class="barw"><b data-w="45"></b></span>0.9%</td></tr>
+          <tr class="win"><td class="s">Your skin changed. Your routine didn't.<span class="win-pill">WIN</span></td><td>34.6%</td><td><span class="barw"><b data-w="80"></b></span>1.6%</td></tr>
+          <tr><td class="s">Still using the cream we sent?</td><td>41.3%</td><td><span class="barw"><b data-w="55"></b></span>1.1%</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="glass card note rv"><h4>Why it works</h4><p>It opens with the customer's own timeline, gives one useful tip before any offer, and saves the discount for people already running low.</p></div>
+    <div class="glass card note rv"><h4>How I pick a winner</h4><p>Not the highest open rate. The variant with the best placed-order rate per recipient goes into the flow.</p></div>
+    <div class="glass live card prompt rv">
+      <div class="lbl"><span>AI visuals · prompt</span><span>Gemini · video</span></div>
+      <span id="typed"></span><span class="caret" aria-hidden="true"></span>
+    </div>
+    <div class="ai-steps rv">
+      <div class="glass"><b>Brief</b>Angle from the campaign plan.</div>
+      <div class="glass"><b>Generate</b>3–6 variants, keep the best.</div>
+      <div class="glass"><b>Finish</b>Crop, compress, alt text.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOM SOFTWARE -->
+<section id="dev" class="chapter split" aria-label="Custom software development">
+  <div class="col L">
+    <div class="glass card title rv"><span class="eyebrow">Bonus skill</span><h2>I also build <em class="s">custom software</em></h2><p>Before retention, I built custom web software. So when your email setup needs something Klaviyo can't do out of the box, I can build it myself instead of waiting on a developer.</p></div>
+    <div class="glass live card rv">
+      <p class="eyebrow">How it helps your store</p>
+      <ul class="dev-list">
+        <li><span>01</span><div><b>Custom Klaviyo integrations</b><small>Send custom events and profile data from Shopify or your own systems through the Klaviyo API, so flows trigger on exactly what matters.</small></div></li>
+        <li><span>02</span><div><b>Shopify theme fixes</b><small>Signup forms, back-in-stock buttons, quiz and preference pages built into your theme without a separate agency.</small></div></li>
+        <li><span>03</span><div><b>Internal tools and reports</b><small>Dashboards and small apps for your team, like revenue reports that pull from Shopify and Klaviyo together.</small></div></li>
+        <li><span>04</span><div><b>Your existing software</b><small>Fixes and new features in PHP, Laravel or WordPress systems your business already runs on.</small></div></li>
+      </ul>
+    </div>
+  </div>
+  <div class="col R">
+    <a class="glass live store rv" href="https://libroaccounts.com/" target="_blank" rel="noopener">
+      <div class="chrome"><i></i><i></i><i></i><span>libroaccounts.com</span><em>Live ↗</em></div>
+      <div class="store-body">
+        <p class="eyebrow">Custom software · Laravel</p><h3>Libro Accounts</h3>
+        <p>Accounting management system I built in Laravel, with real-time reporting.</p>
+        <div class="stack"><span>Laravel</span><span>PHP</span><span>MySQL</span><span>Reporting</span></div>
+      </div>
+    </a>
+    <div class="glass card rv">
+      <p class="eyebrow">Example · custom event to Klaviyo</p>
+      <div class="code"><span class="c">// trigger a flow when a subscription renews</span>
+<span class="k">POST</span> /api/events
+{
+  <span class="s">"metric"</span>: <span class="s">"Subscription Renewed"</span>,
+  <span class="s">"profile"</span>: { <span class="s">"email"</span>: <span class="s">"sara@…"</span> },
+  <span class="s">"properties"</span>: { <span class="s">"plan"</span>: <span class="s">"Barrier Cream 50ml"</span> }
+}</div>
+    </div>
+    <div class="glass card rv">
+      <p class="eyebrow">Stack</p>
+      <div class="stack"><span>PHP</span><span>Laravel</span><span>WordPress</span><span>Shopify Liquid</span><span>HTML · CSS</span><span>MySQL</span><span>REST APIs</span><span>Klaviyo API</span><span>Python (basic)</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FIT -->
+<section id="fit" class="chapter split" aria-label="Fit for the role">
+  <div class="col L">
+    <div class="glass card title rv"><span class="eyebrow">Against your job post</span><h2>Built for <em class="s">this role</em></h2><p>Each requirement, and where I stand.</p></div>
+    <div class="glass card req rv"><span class="q">2–4 years hands-on Klaviyo or Omnisend on Shopify D2C</span><span class="a">3.5 years on both, including an Omnisend → Klaviyo migration.</span><span class="ck"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg>Match</span></div>
+    <div class="glass card req rv"><span class="q">Strong written English. You write the copy.</span><span class="a">Every email and subject line on this page is my writing.</span><span class="ck"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg>Match</span></div>
+    <div class="glass card req rv"><span class="q">Daily AI tool use for visuals</span><span class="a">The video you're scrolling through was generated with AI.</span><span class="ck"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg>Match</span></div>
+  </div>
+  <div class="col R">
+    <div class="glass live card clock rv">
+      <span class="eyebrow">Your office, right now</span>
+      <div class="t" id="cet">--:--</div>
+      <div class="row"><span id="cetLbl">Berlin · CET</span><span id="pkt">Karachi --:--</span></div>
+      <span class="state" id="state"><i></i>Checking hours…</span>
+    </div>
+    <div class="glass card req rv"><span class="q">Full time, 09:00 to 18:00 CET</span><span class="a">Available your full working day from Pakistan (CET +3 to +4 hours).</span><span class="ck"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg>Match</span></div>
+    <div class="glass card req rv"><span class="q">No parallel clients</span><span class="a">One employer. Your brand gets all my working hours.</span><span class="ck"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg>Match</span></div>
+    <div class="glass card req rv"><span class="q">Not B2B cold email or lead gen</span><span class="a">My work is D2C retention: existing Shopify customers, flows and campaigns.</span><span class="ck"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3 3 7-7"/></svg>Match</span></div>
+    <div class="glass live card req rv"><span class="q">Extra, not in the job post</span><span class="a">Custom software development. I can build Klaviyo integrations, theme changes and internal tools myself.</span><span class="ck" style="color:var(--accent)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M3 8h10"/></svg>Bonus</span></div>
+  </div>
+</section>
+
+<div class="window" aria-hidden="true"></div>
+
+<!-- CONTACT -->
+<section id="contact" class="chapter" style="padding-inline:var(--gutter);padding-top:0">
+  <div class="cta glass live solid-bg rv">
+    <p class="eyebrow">Contact</p>
+    <h2 style="margin-top:14px">Let's bring your customers <em class="s">back.</em></h2>
+    <p>Send me your store URL and I'll reply with three flow fixes I'd make in my first week.</p>
+    <div class="mailrow">
+      <span class="addr" id="addr">aqifakhtar22@gmail.com</span>
+      <button class="btn solid" id="copyBtn" type="button">Copy email</button>
+      <span class="toast" id="toast" role="status"></span>
+    </div>
+  </div>
+</section>
+</div>
+<footer><span>© <span id="yr">2026</span> Aqif Akhtar · D2C email &amp; SMS retention</span><span class="mono">Klaviyo · Omnisend · Shopify</span></footer>
+
+<script>
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+
+  /* ================= background video, scrubbed by scroll ================= */
+  var v = document.getElementById('bgv'), flash = document.getElementById('flash');
+  var tall = matchMedia('(max-aspect-ratio: 1/1)');
+  var studio = document.querySelector('.studio');
+  function pickSrc(){
+    var s = (tall.matches ? 'bg-tall' : 'bg-wide') + '.mp4', poster = (tall.matches ? 'bg-poster-tall' : 'bg-poster') + '.jpg';
+    studio.style.backgroundImage = 'url("' + poster + '")';
+    if(v.getAttribute('src') !== s){ var keep = timeFor(shown); v.setAttribute('src', s); v.load(); v.addEventListener('loadedmetadata', function f(){ v.removeEventListener('loadedmetadata', f); try{ v.currentTime = keep; }catch(e){} }); prime(); }
+  }
+  function prime(){ var pr = v.play(); if(pr && pr.then) pr.then(function(){ v.pause(); }).catch(function(){}); }
+  tall.addEventListener ? tall.addEventListener('change', pickSrc) : tall.addListener(pickSrc);
+  ['touchstart','pointerdown','keydown'].forEach(function(ev){ window.addEventListener(ev, function once(){ prime(); window.removeEventListener(ev, once); }, {passive:true}); });
+
+  var CUT_A = 11.0, CUT_B = 11.09, END = 19.95, SPLIT = 0.46, GAP = 0.02;
+  function timeFor(p){
+    if(p <= SPLIT) return (p / SPLIT) * CUT_A;
+    if(p <= SPLIT + GAP) return CUT_A;
+    return CUT_B + ((p - SPLIT - GAP) / (1 - SPLIT - GAP)) * (END - CUT_B);
+  }
+  var target = 0, shown = 0, running = false;
+  pickSrc();
+
+  function progress(){ var max = document.documentElement.scrollHeight - innerHeight; return max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0; }
+
+  function paint(p){
+    var t = timeFor(p);
+    if(v.readyState >= 1 && !v.seeking && Math.abs(v.currentTime - t) > .025){ try{ v.currentTime = t; }catch(e){} }
+    var f = Math.max(0, 1 - Math.abs(p - (SPLIT + GAP/2)) / (GAP * 1.6));
+    flash.style.opacity = (f * .92).toFixed(3);
+  }
+  function loop(){
+    shown += (target - shown) * (reduce ? 1 : .12);
+    if(Math.abs(target - shown) < .0004) shown = target;
+    paint(shown);
+    if(shown !== target) requestAnimationFrame(loop); else running = false;
+  }
+  function onScroll(){ target = progress(); if(!running){ running = true; requestAnimationFrame(loop); } }
+  addEventListener('scroll', onScroll, {passive:true});
+  addEventListener('resize', onScroll);
+  v.addEventListener('loadeddata', function(){ paint(shown); });
+  v.addEventListener('seeked', function(){ if(Math.abs(v.currentTime - timeFor(shown)) > .03) paint(shown); });
+  onScroll();
+
+  /* ================= flows ================= */
+  var FLOWS = [
+    {id:'welcome', name:'Welcome series', meta:'3 emails', desc:'Turns a new signup into a first order, then shows why the brand is worth a second one.',
+     kpi:[['52%','open rate'],['7.8%','signup → order']],
+     nodes:[['trig','⚡','Trigger: joined list','Popup or footer form, double opt-in for EU'],
+            ['mail','01','Email 1 · instant','10% code and the brand story','Your 10% is inside (and why we started)'],
+            ['wait','⏱','Wait 2 days'],
+            ['split','⑂','Split: placed order?','Yes → post-purchase. No → continue'],
+            ['mail','02','Email 2 · best sellers','Top 3 products with reviews','The 3 things everyone orders first'],
+            ['mail','03','Email 3 · code expiry','Plain-text note from the founder','Your code ends tonight']]},
+    {id:'cart', name:'Abandoned checkout', meta:'3 steps', desc:'Recovers carts without training customers to wait for a discount. The offer only shows up at the end.',
+     kpi:[['€4.10','revenue / recipient'],['11.4%','recovery rate']],
+     nodes:[['trig','⚡','Trigger: started checkout','Filter: no order since starting'],
+            ['wait','⏱','Wait 1 hour'],
+            ['mail','01','Email 1 · reminder','Cart contents, no discount','You left something in your bag'],
+            ['mail','02','Email 2 · reassurance','Reviews, shipping and returns','Still thinking? Here\'s what others said'],
+            ['split','⑂','Split: cart value > €60?','Yes → free shipping. No → 10% code'],
+            ['mail','03','SMS + email · offer','Expires in 24h','Your cart, with free shipping until midnight']]},
+    {id:'post', name:'Post-purchase', meta:'4 emails', desc:'Builds the habit behind a second order: how-to first, review ask second, replenishment last.',
+     kpi:[['+9.2 pts','repeat rate'],['18%','review rate']],
+     nodes:[['trig','⚡','Trigger: placed order','First-time vs returning split'],
+            ['mail','01','Email 1 · thank you','What happens next','Order confirmed. Here\'s how to get the most from it'],
+            ['mail','02','Email 2 · how-to','Tips for the exact product bought','The step most people skip'],
+            ['mail','03','Email 3 · review ask','One-click star rating','Two weeks in. How\'s it going?'],
+            ['wait','⏱','Wait: run-out date − 5 days'],
+            ['mail','04','Email 4 · replenish','Refill with free shipping','Running low? Your refill is ready']]},
+    {id:'winback', name:'Winback', meta:'2 emails', desc:'Brings back lapsed buyers, then suppresses non-responders to protect deliverability.',
+     kpi:[['6.3%','reactivated'],['98%','inbox placement']],
+     nodes:[['trig','⚡','Trigger: 90 days since last order','1+ orders, none in 90 days'],
+            ['mail','01','Email 1 · what\'s new','Launches since their last order','Your skin changed. Your routine didn\'t.'],
+            ['mail','02','Email 2 · offer','15% off, based on last product','A thank-you for coming back'],
+            ['split','⑂','Split: engaged in 30 days?','No → sunset flow and suppress']]},
+    {id:'vip', name:'VIP & back in stock', meta:'2 flows', desc:'Rewards the top 10% of customers and alerts subscribers when a sold-out item returns.',
+     kpi:[['3.1×','VIP order value'],['24%','BIS conversion']],
+     nodes:[['trig','⚡','Trigger: entered VIP segment','RFM 4–5 on frequency and spend'],
+            ['mail','01','Email · early access','48h before everyone else','You get it first, 48 hours early'],
+            ['trig','⚡','Trigger: back in stock','Klaviyo BIS form on sold-out pages'],
+            ['mail','02','Email + SMS · restock','Sent in batches to avoid overselling','It\'s back. We saved you one.']]}
+  ];
+  var tabs = document.getElementById('tabs'), canvas = document.getElementById('canvas');
+  function render(i){
+    var f = FLOWS[i];
+    [].forEach.call(tabs.children,function(t,j){ t.setAttribute('aria-selected', j===i?'true':'false'); t.tabIndex = j===i?0:-1; });
+    var h = '<h3>'+esc(f.name)+'</h3><p class="desc">'+esc(f.desc)+'</p><div class="kpi">'+
+      f.kpi.map(function(k){return '<div><b>'+esc(k[0])+'</b>'+esc(k[1])+'</div>'}).join('')+'</div><div class="flow">';
+    f.nodes.forEach(function(n,k){
+      h += '<div class="node '+(n[0]==='mail'?'':n[0])+'" style="animation-delay:'+(k*70)+'ms"><span class="ico">'+esc(n[1])+'</span><div><h4>'+esc(n[2])+'</h4>'+
+        (n[3]?'<p>'+esc(n[3])+'</p>':'')+(n[4]?'<span class="subj">'+esc(n[4])+'</span>':'')+'</div></div>';
+    });
+    canvas.innerHTML = h + '</div>';
+    canvas.setAttribute('aria-labelledby','tab-'+f.id);
+    onScroll();
+  }
+  FLOWS.forEach(function(f,i){
+    var b = document.createElement('button');
+    b.className='tab'; b.type='button'; b.id='tab-'+f.id; b.setAttribute('role','tab');
+    b.innerHTML = esc(f.name)+'<small>'+esc(f.meta)+'</small>';
+    b.addEventListener('click',function(){render(i)});
+    b.addEventListener('keydown',function(e){
+      var n = null;
+      if(e.key==='ArrowDown'||e.key==='ArrowRight') n=(i+1)%FLOWS.length;
+      if(e.key==='ArrowUp'||e.key==='ArrowLeft') n=(i-1+FLOWS.length)%FLOWS.length;
+      if(n!==null){ e.preventDefault(); render(n); tabs.children[n].focus(); }
+    });
+    tabs.appendChild(b);
+  });
+  render(1);
+
+  /* ================= reveal ================= */
+  function fillBars(){ document.querySelectorAll('#lab .barw b').forEach(function(b){ b.style.width = b.dataset.w + '%'; }); }
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.remove('pre'); io.unobserve(e.target); if(e.target.id==='lab') fillBars(); }
+    }); }, {rootMargin:'0px 0px -6% 0px'});
+    document.querySelectorAll('.rv').forEach(function(el){
+      if(el.getBoundingClientRect().top > innerHeight){ el.classList.add('pre'); io.observe(el); }
+      else if(el.id==='lab') fillBars();
+    });
+  } else fillBars();
+
+  /* ================= typed prompt ================= */
+  var promptText = 'A confident man in a tailored navy suit and black turtleneck walks toward camera in a bright white studio, stops, then turns a slow 360°. Soft key light, premium brand-film look, 20 seconds.';
+  var typed = document.getElementById('typed');
+  if(reduce || !('IntersectionObserver' in window)){ typed.textContent = promptText; }
+  else {
+    var k = 0, started = false;
+    typed.textContent = promptText.slice(0, 60);
+    var type = function(){ if(k <= promptText.length){ typed.textContent = promptText.slice(0, k++); setTimeout(type, 22 + Math.random()*30); } else setTimeout(function(){ k = 0; type(); }, 5000); };
+    new IntersectionObserver(function(es){ if(es[0].isIntersecting && !started){ started = true; type(); } }).observe(typed);
+  }
+
+  /* ================= CET clock ================= */
+  function hm(tz){ return new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit',timeZone:tz}).format(new Date()); }
+  function tick(){
+    try{
+      document.getElementById('cet').textContent = hm('Europe/Berlin');
+      var z = new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Berlin',timeZoneName:'short'}).formatToParts(new Date()).find(function(p){return p.type==='timeZoneName'});
+      document.getElementById('cetLbl').textContent = 'Berlin · ' + (z ? z.value.replace('GMT+2','CEST').replace('GMT+1','CET') : 'CET');
+      document.getElementById('pkt').textContent = 'Karachi ' + hm('Asia/Karachi');
+      var parts = new Intl.DateTimeFormat('en-GB',{hour:'numeric',weekday:'short',hour12:false,timeZone:'Europe/Berlin'}).formatToParts(new Date());
+      var h = +parts.find(function(p){return p.type==='hour'}).value, wd = parts.find(function(p){return p.type==='weekday'}).value;
+      var on = h>=9 && h<18 && wd!=='Sat' && wd!=='Sun', st = document.getElementById('state');
+      st.className = 'state' + (on ? '' : ' off');
+      st.innerHTML = '<i></i>' + (on ? 'Inside your 09:00–18:00 hours' : 'Outside office hours');
+    }catch(e){}
+  }
+  tick(); setInterval(tick, 15000);
+
+  /* ================= copy email ================= */
+  var addr = document.getElementById('addr'), toast = document.getElementById('toast');
+  document.getElementById('copyBtn').addEventListener('click', function(){
+    function sel(){ var r = document.createRange(); r.selectNodeContents(addr); var s = getSelection(); s.removeAllRanges(); s.addRange(r); toast.textContent = 'Selected. Press Ctrl/⌘+C to copy.'; }
+    if(navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(addr.textContent).then(function(){ toast.textContent = 'Copied to clipboard'; }, sel);
+    else sel();
+  });
+  document.getElementById('yr').textContent = new Date().getFullYear();
+})();
+</script>
+
+</body>
+</html>
